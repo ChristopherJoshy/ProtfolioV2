@@ -5,7 +5,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from 'url';
 
-// Get the repository name from package.json or use a default
+// Get the repository name from the GitHub repository URL
 const repoName = "ProtfolioV2";
 
 // Get dirname equivalent in ESM
