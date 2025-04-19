@@ -1,0 +1,202 @@
+%PDF-1.4
+1 0 obj
+<<
+/Title (Christopher Joshy - Resume)
+/Author (Christopher Joshy)
+/Subject (Professional Resume)
+/Producer (Portfolio Website)
+/CreationDate (D:20250419000000)
+>>
+endobj
+2 0 obj
+<<
+/Type /Catalog
+/Pages 3 0 R
+>>
+endobj
+3 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [4 0 R]
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Parent 3 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+/F3 7 0 R
+>>
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+>>
+/MediaBox [0 0 595 842]
+/Contents 8 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+>>
+endobj
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Oblique
+/Encoding /WinAnsiEncoding
+>>
+endobj
+8 0 obj
+<< /Length 6500 >>
+stream
+BT
+/F2 18 Tf
+50 800 Td
+(Christopher Joshy) Tj
+/F1 12 Tf
+0 -20 Td
+(Full Stack Developer | Computer Science Student) Tj
+0 -15 Td
+(Email: christopherjoshy4@gmail.com | Phone: +91 8075809531) Tj
+0 -15 Td
+(Alappuzha, Kerala, India | github.com/ChristopherJoshy) Tj
+/F2 14 Tf
+-50 -40 Td
+(About Me) Tj
+/F1 11 Tf
+0 -20 Td
+(Passionate developer with experience in web development, game programming, and AI.) Tj
+0 -15 Td
+(Currently pursuing B.Tech in Computer Science at St. Joseph's College of Engineering and) Tj
+0 -15 Td
+(Technology, Palai. Looking for opportunities to develop innovative applications.) Tj
+/F2 14 Tf
+0 -30 Td
+(Education) Tj
+/F2 12 Tf
+0 -20 Td
+(St. Joseph's College of Engineering and Technology \(SJCET\), Palai) Tj
+/F3 11 Tf
+0 -15 Td
+(B.Tech in Computer Science Engineering) Tj
+/F1 11 Tf
+0 -15 Td
+(2022 - Present \(3rd Year\)) Tj
+0 -15 Td
+(- Focusing on core computer science subjects including data structures and algorithms) Tj
+0 -15 Td
+(- Working on projects involving web development and cloud computing) Tj
+0 -15 Td
+(- Actively participating in technical workshops and hackathons) Tj
+/F2 12 Tf
+0 -20 Td
+(St. Mary's Higher Secondary School) Tj
+/F3 11 Tf
+0 -15 Td
+(Higher Secondary Education \(+2\)) Tj
+/F1 11 Tf
+0 -15 Td
+(2020 - 2022) Tj
+0 -15 Td
+(- Completed higher secondary education with focus on science and mathematics) Tj
+/F2 12 Tf
+0 -20 Td
+(Fr. Thomas Porukara Central School, Champakulam) Tj
+/F3 11 Tf
+0 -15 Td
+(School Education \(Up to 8th\)) Tj
+/F1 11 Tf
+0 -15 Td
+(2012 - 2018) Tj
+/F2 14 Tf
+0 -30 Td
+(Technical Skills) Tj
+/F2 12 Tf
+0 -20 Td
+(Programming Languages:) Tj
+/F1 11 Tf
+15 -15 Td
+(JavaScript, Python, C#, Java, C++, Dart) Tj
+/F2 12 Tf
+-15 -20 Td
+(Web Technologies:) Tj
+/F1 11 Tf
+15 -15 Td
+(HTML/CSS, React, Node.js, Three.js, RESTful APIs) Tj
+/F2 12 Tf
+-15 -20 Td
+(Cloud & DevOps:) Tj
+/F1 11 Tf
+15 -15 Td
+(AWS, Firebase, Git/GitHub, Docker, CI/CD) Tj
+/F2 12 Tf
+-15 -20 Td
+(AI & Data Science:) Tj
+/F1 11 Tf
+15 -15 Td
+(TensorFlow, Jupyter, NumPy, scikit-learn) Tj
+/F2 14 Tf
+-15 -30 Td
+(Projects) Tj
+/F2 12 Tf
+0 -20 Td
+(KKNotesV2) Tj
+/F1 11 Tf
+0 -15 Td
+(A comprehensive study resource platform for KTU Computer Science Engineering students.) Tj
+0 -15 Td
+(GitHub: github.com/ChristopherJoshy/KKNotesV2) Tj
+/F2 12 Tf
+0 -20 Td
+(React Quiz App) Tj
+/F1 11 Tf
+0 -15 Td
+(An interactive quiz application built with React.js featuring multiple categories.) Tj
+0 -15 Td
+(GitHub: github.com/ChristopherJoshy/React-App) Tj
+/F2 12 Tf
+0 -20 Td
+(Three.js Project) Tj
+/F1 11 Tf
+0 -15 Td
+(Interactive 3D animations and visualizations using Three.js framework.) Tj
+0 -15 Td
+(GitHub: github.com/ChristopherJoshy/my-first-Three.js-project) Tj
+ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000155 00000 n 
+0000000204 00000 n 
+0000000261 00000 n 
+0000000434 00000 n 
+0000000531 00000 n 
+0000000633 00000 n 
+0000000737 00000 n 
+trailer
+<<
+/Size 9
+/Root 2 0 R
+/Info 1 0 R
+>>
+startxref
+7289
+%%EOF

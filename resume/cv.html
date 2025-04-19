@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher Joshy - CV</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .cv-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 40px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #6E57E0;
+      padding-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .header-left {
+      flex: 2;
+    }
+    .header-right {
+      flex: 1;
+      text-align: right;
+    }
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #6E57E0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .name {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #2c3e50;
+      background: linear-gradient(to right, #6E57E0, #00C9A7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .title {
+      font-size: 20px;
+      color: #6E57E0;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease;
+    }
+    .contact-item:hover {
+      transform: translateY(-2px);
+    }
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background-color: #6E57E0;
+      color: white;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+    .section {
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 20px;
+      background-color: #6E57E0;
+      margin-right: 10px;
+      border-radius: 3px;
+    }
+    .education-item, .experience-item, .skill-category {
+      margin-bottom: 20px;
+      padding-left: 20px;
+      border-left: 2px solid #eee;
+      position: relative;
+      transition: border-left-color 0.3s ease;
+    }
+    .education-item:hover, .experience-item:hover {
+      border-left-color: #6E57E0;
+    }
+    .education-item::before, .experience-item::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: #6E57E0;
+      border-radius: 50%;
+      left: -7px;
+      top: 6px;
+    }
+    .institution, .job-title {
+      font-weight: bold;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+    .degree, .company {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 5px;
+    }
+    .date {
+      color: #6E57E0;
+      font-size: 14px;
+      font-weight: 500;
+      display: inline-block;
+      background-color: rgba(110, 87, 224, 0.1);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .description {
+      margin-top: 10px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    .skill-category-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #6E57E0;
+      font-size: 16px;
+    }
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .skill {
+      background-color: #f0f0f0;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .skill:hover {
+      background-color: rgba(110, 87, 224, 0.1);
+      border-color: #6E57E0;
+      transform: translateY(-2px);
+    }
+    .projects-list {
+      list-style-type: none;
+    }
+    .project-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 1px solid #eee;
+    }
+    .project-item:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-color: #6E57E0;
+    }
+    .project-title {
+      font-weight: bold;
+      color: #2c3e50;
+      font-size: 17px;
+      margin-bottom: 5px;
+    }
+    .project-link {
+      color: #6E57E0;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 5px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .project-link i {
+      margin-right: 5px;
+    }
+    .project-link:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background-color: #f0f0f0;
+      color: #444;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    .social-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .social-link.github:hover {
+      background-color: #24292e;
+      color: white;
+    }
+    .social-link.linkedin:hover {
+      background-color: #0077b5;
+      color: white;
+    }
+    .social-link.instagram:hover {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: white;
+    }
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .interest {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background-color: #f9f9f9;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    .interest i {
+      color: #6E57E0;
+    }
+    .language-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+    .language-name {
+      font-weight: 500;
+    }
+    .language-level {
+      width: 120px;
+      height: 6px;
+      background-color: #eee;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .language-progress {
+      height: 100%;
+      background-color: #6E57E0;
+    }
+    @media print {
+      body {
+        padding: 0;
+        background-color: white;
+      }
+      .cv-container {
+        box-shadow: none;
+        max-width: 100%;
+        padding: 20px;
+      }
+    }
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .header-right {
+        margin-bottom: 20px;
+      }
+      .contact-info {
+        justify-content: center;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cv-container">
+    <div class="header">
+      <div class="header-left">
+        <div class="name">Christopher Joshy</div>
+        <div class="title">Full Stack Developer | Computer Science Student</div>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <span>christopherjoshy4@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <span>+91 8075809531</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <span>Alappuzha, Kerala, India</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <span>github.com/ChristopherJoshy</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <img src="/images/profile.jpg" alt="Christopher Joshy" class="profile-image">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-user-alt" style="margin-right: 10px; color: #6E57E0;"></i>About Me
+      </div>
+      <p>Passionate developer with experience in web development, game programming, and AI. Strong problem-solving skills with dedication to writing clean, efficient code. Currently pursuing B.Tech in Computer Science at St. Joseph's College of Engineering and Technology, Palai. Looking for opportunities to develop innovative applications and contribute to open-source projects.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-graduation-cap" style="margin-right: 10px; color: #6E57E0;"></i>Education
+      </div>
+      
+      <div class="education-item">
+        <div class="institution">St. Joseph's College of Engineering and Technology (SJCET), Palai</div>
+        <div class="degree">B.Tech in Computer Science Engineering</div>
+        <div class="date">2022 - Present (3rd Year)</div>
+        <div class="description">
+          <ul>
+            <li>Focusing on core computer science subjects including data structures, algorithms, and software engineering</li>
+            <li>Working on projects involving web development, database management, and cloud computing</li>
+            <li>Actively participating in technical workshops and hackathons</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="education-item">
+        <div class="institution">St. Mary's Higher Secondary School</div>
+        <div class="degree">Higher Secondary Education (+2)</div>
+        <div class="date">2020 - 2022</div>
+        <div class="description">
+          <ul>
+            <li>Completed higher secondary education with focus on science and mathematics</li>
+            <li>Participated in science exhibitions and programming competitions</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="education-item">
+        <div class="institution">Fr. Thomas Porukara Central School, Champakulam</div>
+        <div class="degree">School Education (Up to 8th)</div>
+        <div class="date">2012 - 2018</div>
+        <div class="description">
+          <ul>
+            <li>Received foundational education in science, mathematics, and computer science</li>
+            <li>Participated in various extracurricular activities and competitions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-laptop-code" style="margin-right: 10px; color: #6E57E0;"></i>Technical Skills
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-category-title"><i class="fas fa-code"></i> Programming Languages</div>
+          <div class="skill-list">
+            <span class="skill">JavaScript</span>
+            <span class="skill">Python</span>
+            <span class="skill">C#</span>
+            <span class="skill">Java</span>
+            <span class="skill">C++</span>
+            <span class="skill">Dart</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <div class="skill-category-title"><i class="fas fa-globe"></i> Web Technologies</div>
+          <div class="skill-list">
+            <span class="skill">HTML/CSS</span>
+            <span class="skill">React</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Three.js</span>
+            <span class="skill">RESTful APIs</span>
+            <span class="skill">Responsive Design</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <div class="skill-category-title"><i class="fas fa-cloud"></i> Cloud & DevOps</div>
+          <div class="skill-list">
+            <span class="skill">AWS</span>
+            <span class="skill">Firebase</span>
+            <span class="skill">Git/GitHub</span>
+            <span class="skill">Docker</span>
+            <span class="skill">CI/CD</span>
+          </div>
+        </div>
+        
+        <div class="skill-category">
+          <div class="skill-category-title"><i class="fas fa-robot"></i> AI & Data Science</div>
+          <div class="skill-list">
+            <span class="skill">TensorFlow</span>
+            <span class="skill">Jupyter</span>
+            <span class="skill">NumPy</span>
+            <span class="skill">scikit-learn</span>
+            <span class="skill">Data Visualization</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-project-diagram" style="margin-right: 10px; color: #6E57E0;"></i>Projects
+      </div>
+      <ul class="projects-list">
+        <li class="project-item">
+          <div class="project-title">KKNotesV2</div>
+          <div class="description">A comprehensive study resource platform for KTU Computer Science Engineering students. Features include course materials, previous year question papers, and interactive study guides.</div>
+          <div><a href="https://github.com/ChristopherJoshy/KKNotesV2" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a></div>
+        </li>
+        
+        <li class="project-item">
+          <div class="project-title">React Quiz App</div>
+          <div class="description">An interactive quiz application built with React.js featuring multiple categories, timed questions, and score tracking. Implements responsive design for mobile and desktop usage.</div>
+          <div><a href="https://github.com/ChristopherJoshy/React-App" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a></div>
+        </li>
+        
+        <li class="project-item">
+          <div class="project-title">Three.js Project</div>
+          <div class="description">Interactive 3D animations and visualizations using Three.js framework. Includes object manipulation, lighting effects, and camera controls for an immersive web experience.</div>
+          <div><a href="https://github.com/ChristopherJoshy/my-first-Three.js-project" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-certificate" style="margin-right: 10px; color: #6E57E0;"></i>Certifications
+      </div>
+      <ul class="projects-list">
+        <li class="project-item">
+          <div class="project-title">Applied Artificial Intelligence Workshop</div>
+          <div class="description">Participated in an intensive workshop covering AI fundamentals, machine learning algorithms, neural networks, and practical applications.</div>
+          <div class="date">January 2025</div>
+        </li>
+        
+        <li class="project-item">
+          <div class="project-title">24 Hour National-Level Gen.AI Online Hackathon</div>
+          <div class="description">Successfully completed a 24-hour hackathon focused on generative AI applications, developing solutions for real-world problems using cutting-edge AI technologies.</div>
+          <div class="date">January 2025</div>
+        </li>
+        
+        <li class="project-item">
+          <div class="project-title">Java Programming Fundamentals</div>
+          <div class="description">Completed comprehensive course on Java programming concepts, object-oriented design, data structures, and practical implementations.</div>
+          <div class="date">November 2024</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-history" style="margin-right: 10px; color: #6E57E0;"></i>Coding Journey
+      </div>
+      <div class="experience-item">
+        <div class="job-title">2020: Started Coding Journey</div>
+        <div class="description">Began learning programming fundamentals with Python and created first applications. Developed a passion for problem-solving through code.</div>
+      </div>
+      
+      <div class="experience-item">
+        <div class="job-title">2021-2022: Web Development & Version Control</div>
+        <div class="description">Learned HTML, CSS, JavaScript, and mastered Git for collaborative workflows. Built responsive websites and interactive web applications.</div>
+      </div>
+      
+      <div class="experience-item">
+        <div class="job-title">2023-2024: Cloud Computing & Game Development</div>
+        <div class="description">Explored AWS cloud services, serverless architectures, and game development using C++ and Unreal Engine. Started exploring machine learning and AI concepts.</div>
+      </div>
+      
+      <div class="experience-item">
+        <div class="job-title">2025: Full-Stack Development</div>
+        <div class="description">Currently focusing on full-stack development with React, Node.js, and database technologies. Building complete web applications and services.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-language" style="margin-right: 10px; color: #6E57E0;"></i>Languages
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
+        <div>
+          <div class="language-item">
+            <span class="language-name">English</span>
+            <div class="language-level">
+              <div class="language-progress" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <span class="language-name">Malayalam</span>
+            <div class="language-level">
+              <div class="language-progress" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="language-item">
+            <span class="language-name">Hindi</span>
+            <div class="language-level">
+              <div class="language-progress" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <span class="language-name">Tamil</span>
+            <div class="language-level">
+              <div class="language-progress" style="width: 40%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-heart" style="margin-right: 10px; color: #6E57E0;"></i>Interests & Hobbies
+      </div>
+      <div class="interests">
+        <div class="interest"><i class="fas fa-gamepad"></i> Game Development</div>
+        <div class="interest"><i class="fas fa-robot"></i> Artificial Intelligence</div>
+        <div class="interest"><i class="fas fa-code"></i> Open Source</div>
+        <div class="interest"><i class="fas fa-chess"></i> Chess</div>
+        <div class="interest"><i class="fas fa-book"></i> Reading</div>
+        <div class="interest"><i class="fas fa-music"></i> Music</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="social-links">
+        <a href="https://github.com/ChristopherJoshy" target="_blank" class="social-link github"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/christopher-joshy-272a77290" target="_blank" class="social-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/calculatederror" target="_blank" class="social-link instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>References available upon request</p>
+      <p>Last Updated: April 2025</p>
+    </div>
+  </div>
+</body>
+</html>
