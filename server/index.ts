@@ -1,6 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { setupVite, serveStatic, log } from "./vite.fixed";
 
 const app = express();
 app.use(express.json());
@@ -50,8 +50,14 @@ app.use((req, res, next) => {
   // importantly only setup vite in development and after
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
-  if (app.get("env") === "development") {
-    await setupVite(app, server);
+  if (process.env.NODE_ENV === "development") {
+    try {
+      await setupVite(app, server);
+      log("Vite development server started");
+    } catch (error) {
+      log(`Error setting up Vite: ${error}. Falling back to static serving.`, "error");
+      serveStatic(app);
+    }
   } else {
     serveStatic(app);
   }

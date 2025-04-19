@@ -5,9 +5,14 @@
   "license": "MIT",
   "homepage": "https://christopherjoshy.github.io/ProtfolioV2/",
   "scripts": {
-    "dev": "set NODE_ENV=development && tsx server/index.ts",
-    "dev:unix": "NODE_ENV=development tsx server/index.ts",
-    "build": "vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "dev:client": "vite",
+    "dev:server": "set NODE_ENV=development && tsx server/index.ts",
+    "dev:server:unix": "NODE_ENV=development tsx server/index.ts",
+    "dev": "npm run build:client && npm run dev:server",
+    "dev:unix": "npm run build:client && npm run dev:server:unix",
+    "build:client": "vite build",
+    "build:server": "esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "npm run build:client && npm run build:server",
     "build:gh-pages": "set NODE_ENV=production && vite build",
     "build:gh-pages:unix": "NODE_ENV=production vite build",
     "start": "set NODE_ENV=production && node dist/index.js",
@@ -15,7 +20,8 @@
     "check": "tsc",
     "db:push": "drizzle-kit push",
     "predeploy": "npm run build:gh-pages",
-    "deploy": "gh-pages -d dist/public"
+    "deploy": "gh-pages -d dist/public",
+    "github-pages": "npm run build:gh-pages && npm run deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -107,7 +113,7 @@
     "autoprefixer": "^10.4.20",
     "drizzle-kit": "^0.30.4",
     "esbuild": "^0.25.0",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.19.1",
