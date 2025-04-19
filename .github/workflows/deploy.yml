@@ -37,7 +37,7 @@ jobs:
           echo "VITE_FIREBASE_APP_ID=${{ secrets.VITE_FIREBASE_APP_ID }}" >> .env
       
       - name: Build
-        run: npm run build:gh-pages
+        run: npm run build:gh-pages:unix
         env:
           NODE_ENV: production
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
@@ -51,7 +51,7 @@ jobs:
         uses: actions/configure-pages@v3
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: './dist/public'
       
@@ -64,4 +64,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
