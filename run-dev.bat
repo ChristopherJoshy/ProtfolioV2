@@ -1,6 +1,0 @@
-@echo off
-echo Building client...
-call npm run build:client
-echo Starting server...
-set NODE_ENV=development
-npx tsx server/index.ts

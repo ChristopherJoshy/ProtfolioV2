@@ -94,13 +94,7 @@ If you encounter issues with local development:
 
 ## Environment Variables
 
-For Firebase functionality to work, you need to set up environment variables:
+If you need to add environment variables in the future:
 
-1. Create a `.env` file in the root directory with the following variables:
-   ```
-   VITE_FIREBASE_API_KEY=your_api_key
-   VITE_FIREBASE_PROJECT_ID=your_project_id
-   VITE_FIREBASE_APP_ID=your_app_id
-   ```
-
-2. For GitHub Pages deployment, add these as repository secrets in your GitHub repository settings.
+1. Create a `.env` file in the root directory with your variables
+2. For GitHub Pages deployment, add these as repository secrets in your GitHub repository settings
