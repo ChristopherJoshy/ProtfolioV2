@@ -1,0 +1,3 @@
+@echo off
+echo Starting Vite development server...
+npx vite --config vite.config.ts
