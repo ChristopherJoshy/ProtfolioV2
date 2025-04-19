@@ -1,0 +1,274 @@
+/* Custom cursor styles */
+.custom-cursor {
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  .custom-cursor {
+    cursor: auto;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 8s linear infinite;
+}
+
+/* Typewriter animation */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.animate-typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 4s steps(40) 1s forwards;
+}
+
+/* Cursor blink animation */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Gradient animation */
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-gradient-x {
+  background-size: 300% 100%;
+  animation: gradient-x 15s ease infinite;
+}
+
+/* Moving background animation */
+@keyframes move-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-move-bg {
+  animation: move-bg 4s ease infinite;
+}
+
+/* Progress bar animation */
+@keyframes progress {
+  0% { width: 0%; }
+  100% { width: var(--progress-width); }
+}
+
+.animate-progress {
+  animation: progress 2s ease-out forwards;
+}
+
+/* Glass card styles */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card {
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Hexagon shape */
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Magic background gradient */
+.magic-bg {
+  background: linear-gradient(90deg, #6E57E0, #00C9A7, #FF6B6B, #6E57E0);
+  background-size: 300% 100%;
+  animation: move-bg 10s ease infinite;
+}
+
+/* Fade in animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Staggered animations */
+.stagger-item {
+  opacity: 0;
+}
+
+.stagger-item.is-visible {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Fade in staggered children */
+.parent-fade-in .child-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.parent-fade-in.is-visible .child-item {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.parent-fade-in.is-visible .child-item:nth-child(1) { animation-delay: 0.1s; }
+.parent-fade-in.is-visible .child-item:nth-child(2) { animation-delay: 0.2s; }
+.parent-fade-in.is-visible .child-item:nth-child(3) { animation-delay: 0.3s; }
+.parent-fade-in.is-visible .child-item:nth-child(4) { animation-delay: 0.4s; }
+.parent-fade-in.is-visible .child-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Shine animation for call-to-action buttons */
+@keyframes shine {
+  from {
+    background-position: 200% center;
+  }
+}
+
+.btn-shine {
+  background: linear-gradient(to right, transparent 20%, rgba(255, 255, 255, 0.2) 40%, rgba(255, 255, 255, 0.2) 60%, transparent 80%);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+/* Wave effect animation */
+@keyframes wave {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-5px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+.animate-wave {
+  animation: wave 2s infinite;
+}
+
+/* Scroll indicator styles */
+.scroll-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background-color: hsl(var(--primary));
+  z-index: 1000;
+  width: 0%;
+  transition: width 0.2s ease-out;
+}
+
+/* 3D card hover effect */
+.card-3d {
+  transition: transform 0.3s ease;
+  transform: perspective(1000px) rotateX(0) rotateY(0);
+}
+
+.card-3d-content {
+  transform: translateZ(30px);
+}
+
+/* Hover scale animations */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Animated border */
+@keyframes borderAnimation {
+  0% { border-color: rgba(110, 87, 224, 0.3); }
+  50% { border-color: rgba(110, 87, 224, 0.8); }
+  100% { border-color: rgba(110, 87, 224, 0.3); }
+}
+
+.animated-border {
+  animation: borderAnimation 3s infinite;
+}
+
+/* Leaflet map custom styling */
+.leaflet-container {
+  font-family: inherit !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--foreground)) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: hsl(var(--background)) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.5) !important;
+  padding: 2px 5px !important;
+  font-size: 9px !important;
+}
